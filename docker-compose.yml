@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  webapplication3:
+    image: ${DOCKER_REGISTRY-}webapplication3
+    build:
+      context: .
+      dockerfile: WebApplication3/Dockerfile
+    volumes:
+      - data:/tmp
+
+  webapplication4:
+    image: ${DOCKER_REGISTRY-}webapplication4
+    build:
+      context: .
+      dockerfile: WebApplication4/Dockerfile
+    volumes:
+      - data:/tmp
+
+volumes:
+  data:
